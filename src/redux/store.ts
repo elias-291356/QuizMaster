@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { userReducer } from "./reducer";
+import { authReducer } from "./reducer";
 
 // import {
 //   persistStore,
@@ -13,7 +13,7 @@ import { userReducer } from "./reducer";
 // } from "redux-persist";
 export const store = configureStore({
   reducer: {
-    user: userReducer,
+    user: authReducer,
     // middleware: (getDefaultMiddleware) =>
     // getDefaultMiddleware({
     //   serializableCheck: {

@@ -1,10 +1,11 @@
 // import { useState } from "react";
 
 import { Route, Routes, Link } from "react-router-dom";
-import Layout from "./components/Layout";
-import LoginForm from "./components/LoginForm";
-import RegisterFrom from "./components/RegisterFrom";
-import ResetPassword from "./components/ResetPassword";
+import Layout from "./components/Layout/Layout";
+import LoginForm from "./components/LoginForm/LoginForm";
+import NotFound from "./components/NotFound/NotFound";
+import RegisterForm from "./components/RegisterForm/RegisterForm";
+import ResetPassword from "./components/ResetPassword/ResetPassword";
 // import AuthPage from "./pages/AuthPage";
 
 // import "./App.css";
@@ -18,7 +19,8 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<LoginForm />} />
           <Route path="login" element={<LoginForm />} />
-          <Route path="register" element={<RegisterFrom />} />
+          <Route path="register" element={<RegisterForm />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
         <Route path="reset" element={<ResetPassword />} />
       </Routes>
