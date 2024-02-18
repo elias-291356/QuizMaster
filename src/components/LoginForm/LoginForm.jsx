@@ -2,16 +2,30 @@ import React from "react";
 import { Link } from "react-router-dom";
 // import ResetPassword from "./ResetPassword";
 import { useForm } from "react-hook-form";
+import { useDispatch, useSelector } from "react-redux";
+import { loginThunk } from "../../redux/thunk";
+import { selectIsLoggedIn, selectName } from "../../redux/selectors";
+import { toast } from "react-toastify";
 
 const LoginForm = () => {
+  const dispatch = useDispatch();
+  const isLoggedIn = useSelector(selectIsLoggedIn);
+  const userName = useSelector(selectName);
+  console.log(userName);
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => {
+    console.log(data);
+    dispatch(loginThunk(data));
+  };
   // console.log(errors);
-
+  if (isLoggedIn) {
+    toast.success(`logged, ${userName}`);
+    return <h1>logged</h1>;
+  }
   return (
     <div>
       <form onSubmit={handleSubmit(onSubmit)}>
