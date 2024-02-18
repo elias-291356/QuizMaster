@@ -3,7 +3,7 @@ import { loginThunk, registerThunk } from "./thunk";
 
 const initialState = {
   // auth: {
-  name: " ",
+  username: " ",
   email: " ",
   // },
   token: null,
@@ -30,7 +30,7 @@ const userSlice = createSlice({
       })
       .addCase(registerThunk.fulfilled, (state, action) => {
         state.isLoggedIn = false;
-        state.name = action.payload.name;
+        state.username = action.payload.username;
         state.email = action.payload.email;
         state.token = action.payload.token;
       })
@@ -46,7 +46,7 @@ const userSlice = createSlice({
       })
       .addCase(loginThunk.fulfilled, (state, action) => {
         state.isLoggedIn = false;
-        state.name = action.payload.name;
+        state.username = action.payload.username;
         state.email = action.payload.email;
         state.token = action.payload.token;
       })

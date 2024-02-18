@@ -21,7 +21,7 @@ const RegisterForm = () => {
       <input
         type="text"
         placeholder="name"
-        {...register("name", { required: true })}
+        {...register("username", { required: true })}
       />
       <input
         type="email"

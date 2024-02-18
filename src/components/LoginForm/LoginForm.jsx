@@ -31,13 +31,13 @@ const LoginForm = () => {
       <form onSubmit={handleSubmit(onSubmit)}>
         <input
           type="email"
-          placeholder="E-mail"
-          {...register("E-mail", { required: true })}
+          placeholder="email"
+          {...register("email", { required: true })}
         />
         <input
           type="password"
           placeholder="Password"
-          {...register("Password", { required: true })}
+          {...register("password", { required: true })}
         />
 
         {/* <input type="submit" /> */}
