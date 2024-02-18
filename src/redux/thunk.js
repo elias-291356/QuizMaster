@@ -1,7 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import {
   // currentUserRequest,
-  // loginRequest,
+  loginRequest,
   // logOutRequest,
   registerRequest,
   setToken,
@@ -12,6 +12,17 @@ export const registerThunk = createAsyncThunk(
   async (formData, thunkAPI) => {
     try {
       const data = await registerRequest(formData);
+      return data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+export const loginThunk = createAsyncThunk(
+  "user/loginThunk",
+  async (formData, thunkAPI) => {
+    try {
+      const data = await loginRequest(formData);
       return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
