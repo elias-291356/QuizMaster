@@ -12,11 +12,36 @@ const clearToken = () => {
   $instance.defaults.headers.Authorization = "";
 };
 
+// ==============
+// $instance.interceptors.request.use((config) => {
+//   const accessToken = localStorage.getItem("accessToken");
+//   config.headers.common.Authorization = `Bearer ${accessToken}`;
+//   return config;
+// });
+
+$instance.interceptors.response.use(
+  (response) => response,
+  async (error) => {
+    if (error.response.status === 401) {
+      try {
+        const refreshToken = localStorage.getItem("refreshToken");
+        const { data } = await $instance.post("auth/refresh", { refreshToken });
+        setToken(data.accessToken);
+        localStorage.setItem("refreshToken", data.refreshToken);
+        return $instance(error.config);
+      } catch (error) {
+        return Promise.reject(error);
+      }
+    }
+    return Promise.reject(error);
+  }
+);
 //Auth Controller
 export const loginRequest = async (formData) => {
   const { data } = await $instance.post("/api/auth/signin", formData);
 
   setToken(data.token);
+  localStorage.setItem("refreshToken", data.refreshToken);
   return data;
 };
 export const registerRequest = async (formData) => {
@@ -26,8 +51,13 @@ export const registerRequest = async (formData) => {
 
   return data;
 };
-// export const logOutRequest = async () => {
-//   const { data } = await $instance.delete('/api/auth/sign-out');
-//   clearToken()
-//   return data;
-// };
+export const logoutRequest = async () => {
+  const { data } = await $instance.delete("/api/auth/sign-out");
+  clearToken();
+  return data;
+};
+
+export const currentUserResponse = async () => {
+  const { data } = await $instance.get("/api/auth/current");
+  return data;
+};
