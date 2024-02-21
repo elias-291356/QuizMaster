@@ -14,17 +14,13 @@ const clearToken = () => {
 
 //Auth Controller
 export const loginRequest = async (formData) => {
-
   const { data } = await $instance.post("/api/auth/signin", formData);
-
 
   setToken(data.token);
   return data;
 };
 export const registerRequest = async (formData) => {
-
   const { data } = await $instance.post("/api/auth/signup", formData);
-
 
   setToken(data.token);
 

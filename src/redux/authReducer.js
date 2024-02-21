@@ -6,7 +6,7 @@ const initialState = {
   username: " ",
   email: " ",
   // },
-  token: null,
+  token: "",
   isLoggedIn: false,
   error: null,
 };
@@ -36,6 +36,7 @@ const userSlice = createSlice({
       })
       .addCase(registerThunk.rejected, (state, action) => {
         state.isLoggedIn = false;
+
         // state.error = action.payload;
       })
 
@@ -49,6 +50,7 @@ const userSlice = createSlice({
         state.username = action.payload.username;
         state.email = action.payload.email;
         state.token = action.payload.token;
+        console.log(action.payload);
       })
       .addCase(loginThunk.rejected, (state, action) => {
         state.isLoggedIn = false;

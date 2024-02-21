@@ -11,7 +11,6 @@ const LoginForm = () => {
   const dispatch = useDispatch();
   const isLoggedIn = useSelector(selectIsLoggedIn);
   const userName = useSelector(selectName);
-  console.log(userName);
   const {
     register,
     handleSubmit,
@@ -24,7 +23,7 @@ const LoginForm = () => {
   // console.log(errors);
   if (isLoggedIn) {
     toast.success(`logged, ${userName}`);
-    return <h1>logged</h1>;
+    return <h1>logining...</h1>;
   }
   return (
     <div>
