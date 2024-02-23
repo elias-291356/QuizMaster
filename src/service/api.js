@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = "https://quiz-master-s113.onrender.com/";
+export const BASE_URL = "https://quiz-master-s113.onrender.com/";
 const $instance = axios.create({
   baseURL: BASE_URL,
 });
