@@ -44,7 +44,7 @@ const LoginForm = () => {
         <button type="submit">Enter</button>
       </form>
       <Link to="/reset">Restore password</Link>
-      <a href={`${`BASE_URL`}api/auth/google`}>Logn with google</a>;
+      <a href={`${`BASE_URL`}/api/auth/google`}>Logn with google</a>;
     </div>
   );
 };
