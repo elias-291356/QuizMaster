@@ -22,7 +22,7 @@ import {
   StyledRestoreAndGoogleAndRegisterWrap,
   StyledSvgCloseIcon,
   StyledLoginAndIconClosWrap,
-  // StyledSvgWrap,
+  StyledLoginWrap,
 } from "./LoginFormStyled";
 import AuthNavRegister from "../AuthNav/AuthNavRegister";
 const LoginForm = () => {
@@ -46,42 +46,44 @@ const LoginForm = () => {
 
   return (
     <>
-      <StyledFormTopWrap>
-        <StyledLoginAndIconClosWrap>
-          <StyledTitleLogin>Login</StyledTitleLogin>
+      <StyledLoginWrap>
+        <StyledFormTopWrap>
+          <StyledLoginAndIconClosWrap>
+            <StyledTitleLogin>Login</StyledTitleLogin>
 
-          <StyledSvgCloseIcon>
-            <use href={`${sprite}#icon-close`}></use>
-          </StyledSvgCloseIcon>
-        </StyledLoginAndIconClosWrap>
+            <StyledSvgCloseIcon>
+              <use href={`${sprite}#icon-close`}></use>
+            </StyledSvgCloseIcon>
+          </StyledLoginAndIconClosWrap>
 
-        <StyledLoginForm onSubmit={handleSubmit(onSubmit)}>
-          <StyledFormBottomWrap>
-            <StyledInputesWrap>
-              <StyledInputEmailWrap
-                type="email"
-                placeholder="Email"
-                {...register("email", { required: true })}
-              />
-              <StyledInputPasswordnWrap
-                type="password"
-                placeholder="Password"
-                {...register("password", { required: true })}
-              />
-            </StyledInputesWrap>
-            <StyledAuthButton type="submit">Enter</StyledAuthButton>
-          </StyledFormBottomWrap>
-        </StyledLoginForm>
-      </StyledFormTopWrap>
-      <StyledRestoreAndGoogleAndRegisterWrap>
-        <StyledALoginGoogle href={`${BASE_URL}api/auth/google`}>
-          Login with google
-        </StyledALoginGoogle>
-        <AuthNavRegister />
-        <StyledLinkRestorePassword to="/reset">
-          Restore password
-        </StyledLinkRestorePassword>
-      </StyledRestoreAndGoogleAndRegisterWrap>
+          <StyledLoginForm onSubmit={handleSubmit(onSubmit)}>
+            <StyledFormBottomWrap>
+              <StyledInputesWrap>
+                <StyledInputEmailWrap
+                  type="email"
+                  placeholder="Email"
+                  {...register("email", { required: true })}
+                />
+                <StyledInputPasswordnWrap
+                  type="password"
+                  placeholder="Password"
+                  {...register("password", { required: true })}
+                />
+              </StyledInputesWrap>
+              <StyledAuthButton type="submit">Enter</StyledAuthButton>
+            </StyledFormBottomWrap>
+          </StyledLoginForm>
+          <StyledRestoreAndGoogleAndRegisterWrap>
+            <StyledALoginGoogle href={`${BASE_URL}api/auth/google`}>
+              Login with google
+            </StyledALoginGoogle>
+            <AuthNavRegister />
+            <StyledLinkRestorePassword to="/reset">
+              Restore password
+            </StyledLinkRestorePassword>
+          </StyledRestoreAndGoogleAndRegisterWrap>
+        </StyledFormTopWrap>
+      </StyledLoginWrap>
     </>
   );
 };
