@@ -6,7 +6,7 @@ import LoginForm from "./components/LoginForm/LoginForm";
 import NotFound from "./components/NotFound/NotFound";
 import RegisterForm from "./components/RegisterForm/RegisterForm";
 import ResetPassword from "./components/ResetPassword/ResetPassword";
-// import AuthPage from "./pages/AuthPage";
+import AuthPage from "./pages/AuthPage";
 
 // import "./App.css";
 // import { useDispatch, useSelector } from "react-redux";
@@ -17,6 +17,7 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<Layout />}>
+          {/* <Route path="/" element={<AuthPage />}> */}
           <Route index element={<LoginForm />} />
           <Route path="login" element={<LoginForm />} />
           <Route path="register" element={<RegisterForm />} />

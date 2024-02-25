@@ -2,6 +2,12 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { registerThunk } from "../../redux/thunk";
+import {
+  StyledInputEmailWrap,
+  StyledInputNameWrap,
+  StyledInputPasswordnWrap,
+  StyledAuthButton,
+} from "../LoginForm/LoginFormStyled";
 
 const RegisterForm = () => {
   const dispatch = useDispatch();
@@ -17,26 +23,29 @@ const RegisterForm = () => {
   };
   console.log(errors);
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <input
-        type="text"
-        placeholder="name"
-        {...register("username", { required: true })}
-      />
-      <input
-        type="email"
-        placeholder="E-mail"
-        {...register("email", { required: true })}
-      />
-      <input
-        type="password"
-        placeholder="Password"
-        {...register("password", { required: true })}
-      />
+    <>
+      <h1>Sign Up</h1>
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <StyledInputNameWrap
+          type="text"
+          placeholder="name"
+          {...register("username", { required: true })}
+        />
+        <StyledInputEmailWrap
+          type="email"
+          placeholder="E-mail"
+          {...register("email", { required: true })}
+        />
+        <StyledInputPasswordnWrap
+          type="password"
+          placeholder="Password"
+          {...register("password", { required: true })}
+        />
 
-      {/* <input type="submit" /> */}
-      <button type="submit">Enter</button>
-    </form>
+        {/* <input type="submit" /> */}
+        <StyledAuthButton type="submit">Enter</StyledAuthButton>
+      </form>
+    </>
   );
 };
 
