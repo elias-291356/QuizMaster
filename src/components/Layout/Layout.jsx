@@ -1,14 +1,13 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-import AuthNav from "../AuthNav/AuthNav";
+
+// import AuthNavRegister from "../AuthNav/AuthNavRegister";
 import { StyledLoginWrap } from "../LoginForm/LoginFormStyled";
 
 const Layout = () => {
   return (
     <StyledLoginWrap>
-      <AuthNav />
       <Outlet />
-      Layout
     </StyledLoginWrap>
   );
 };

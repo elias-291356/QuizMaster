@@ -7,6 +7,7 @@ import { loginThunk } from "../../redux/thunk";
 import { selectIsLoggedIn, selectName } from "../../redux/selectors";
 import { toast } from "react-toastify";
 import { BASE_URL } from "../../service/api";
+import sprite from "../../images/sprite.svg";
 import {
   StyledInputEmailWrap,
   StyledInputPasswordnWrap,
@@ -19,11 +20,15 @@ import {
   StyledFormTopWrap,
   StyledTitleLogin,
   StyledRestoreAndGoogleAndRegisterWrap,
+  StyledSvgCloseIcon,
+  StyledLoginAndIconClosWrap,
+  // StyledSvgWrap,
 } from "./LoginFormStyled";
+import AuthNavRegister from "../AuthNav/AuthNavRegister";
 const LoginForm = () => {
   const dispatch = useDispatch();
   const isLoggedIn = useSelector(selectIsLoggedIn);
-  const userName = useSelector(selectName);
+
   const {
     register,
     handleSubmit,
@@ -42,7 +47,14 @@ const LoginForm = () => {
   return (
     <>
       <StyledFormTopWrap>
-        <StyledTitleLogin>Login</StyledTitleLogin>
+        <StyledLoginAndIconClosWrap>
+          <StyledTitleLogin>Login</StyledTitleLogin>
+
+          <StyledSvgCloseIcon>
+            <use href={`${sprite}#icon-close`}></use>
+          </StyledSvgCloseIcon>
+        </StyledLoginAndIconClosWrap>
+
         <StyledLoginForm onSubmit={handleSubmit(onSubmit)}>
           <StyledFormBottomWrap>
             <StyledInputesWrap>
@@ -65,6 +77,7 @@ const LoginForm = () => {
         <StyledALoginGoogle href={`${BASE_URL}api/auth/google`}>
           Login with google
         </StyledALoginGoogle>
+        <AuthNavRegister />
         <StyledLinkRestorePassword to="/reset">
           Restore password
         </StyledLinkRestorePassword>
