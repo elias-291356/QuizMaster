@@ -2,11 +2,6 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 export const StyledLoginWrap = styled.div`
   display: grid;
-  grid-template-columns: 335px;
-  border: 1px solid var(--border);
-  padding-top: 40px;
-  padding-bottom: 40px;
-  /* grid-column-start: 1; */
   justify-items: center;
   justify-content: center;
   background-color: var(--background);
@@ -16,7 +11,7 @@ export const StyledInputEmailWrap = styled.input`
   background-color: var(--background);
   color: var(--white);
   border-radius: 30px;
-  padding: 14px 243px 14px 18px;
+  padding-left: 20px;
   width: 295px;
   height: 44px;
 `;
@@ -25,7 +20,7 @@ export const StyledInputPasswordnWrap = styled.input`
   background-color: var(--background);
   color: var(--white);
   border-radius: 30px;
-  padding: 14px 243px 14px 18px;
+  padding-left: 20px;
   width: 295px;
   height: 44px;
 `;
@@ -34,7 +29,7 @@ export const StyledInputNameWrap = styled.input`
   background-color: var(--background);
   color: var(--white);
   border-radius: 30px;
-  padding: 14px 243px 14px 18px;
+  padding-left: 20px;
   width: 295px;
   height: 44px;
 `;
@@ -76,9 +71,13 @@ export const StyledInputesWrap = styled.div`
 `;
 export const StyledFormTopWrap = styled.div`
   display: grid;
-  grid-template-columns: 295px;
 
+  border: 1px solid var(--border);
+  border-radius: 20px;
   row-gap: 32px;
+  padding-top: 40px;
+  width: 335px;
+  justify-content: center;
 `;
 
 export const StyledFormBottomWrap = styled.div`
@@ -99,6 +98,7 @@ export const StyledRestoreAndGoogleAndRegisterWrap = styled.div`
   justify-items: center;
   row-gap: 16px;
   padding-top: 16px;
+  padding-bottom: 40px;
 `;
 export const StyledSvgCloseIcon = styled.svg`
   stroke: #f4f4f4;
@@ -109,4 +109,5 @@ export const StyledLoginAndIconClosWrap = styled.div`
   display: inline-grid;
   grid-template-columns: auto auto;
   justify-content: space-between;
+  align-items: center;
 `;
