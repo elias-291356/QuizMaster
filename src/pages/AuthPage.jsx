@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Outlet } from "react-router-dom";
-import AuthNav from "../components/AuthNav";
+// import AuthNav from "../components/AuthNav";
 
 const AuthPage = () => {
   return (

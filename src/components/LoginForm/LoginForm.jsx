@@ -7,6 +7,19 @@ import { loginThunk } from "../../redux/thunk";
 import { selectIsLoggedIn, selectName } from "../../redux/selectors";
 import { toast } from "react-toastify";
 import { BASE_URL } from "../../service/api";
+import {
+  StyledInputEmailWrap,
+  StyledInputPasswordnWrap,
+  StyledAuthButton,
+  StyledLinkRestorePassword,
+  StyledALoginGoogle,
+  StyledLoginForm,
+  StyledInputesWrap,
+  StyledFormBottomWrap,
+  StyledFormTopWrap,
+  StyledTitleLogin,
+  StyledRestoreAndGoogleAndRegisterWrap,
+} from "./LoginFormStyled";
 const LoginForm = () => {
   const dispatch = useDispatch();
   const isLoggedIn = useSelector(selectIsLoggedIn);
@@ -27,25 +40,36 @@ const LoginForm = () => {
   }
 
   return (
-    <div>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <input
-          type="email"
-          placeholder="email"
-          {...register("email", { required: true })}
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          {...register("password", { required: true })}
-        />
-
-        {/* <input type="submit" /> */}
-        <button type="submit">Enter</button>
-      </form>
-      <Link to="/reset">Restore password</Link>
-      <a href={`${BASE_URL}api/auth/google`}>Login with google</a>;
-    </div>
+    <>
+      <StyledFormTopWrap>
+        <StyledTitleLogin>Login</StyledTitleLogin>
+        <StyledLoginForm onSubmit={handleSubmit(onSubmit)}>
+          <StyledFormBottomWrap>
+            <StyledInputesWrap>
+              <StyledInputEmailWrap
+                type="email"
+                placeholder="Email"
+                {...register("email", { required: true })}
+              />
+              <StyledInputPasswordnWrap
+                type="password"
+                placeholder="Password"
+                {...register("password", { required: true })}
+              />
+            </StyledInputesWrap>
+            <StyledAuthButton type="submit">Enter</StyledAuthButton>
+          </StyledFormBottomWrap>
+        </StyledLoginForm>
+      </StyledFormTopWrap>
+      <StyledRestoreAndGoogleAndRegisterWrap>
+        <StyledALoginGoogle href={`${BASE_URL}api/auth/google`}>
+          Login with google
+        </StyledALoginGoogle>
+        <StyledLinkRestorePassword to="/reset">
+          Restore password
+        </StyledLinkRestorePassword>
+      </StyledRestoreAndGoogleAndRegisterWrap>
+    </>
   );
 };
 
