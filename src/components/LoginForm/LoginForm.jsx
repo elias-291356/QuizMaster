@@ -45,7 +45,7 @@ const LoginForm = () => {
   // console.log(errors);
 
   if (accessToken) {
-    return <Navigate to="/" />;
+    return <Navigate to="/home" />;
   }
 
   return (

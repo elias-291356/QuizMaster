@@ -1,4 +1,6 @@
 import { Route, Routes, Link } from "react-router-dom";
+import HomePage from "./pages/HomePage/HomePage";
+
 import Layout from "./components/Layout/Layout";
 import LoginForm from "./components/LoginForm/LoginForm";
 import NotFound from "./components/NotFound/NotFound";
@@ -14,6 +16,7 @@ function App() {
           <Route index element={<MainPage />} />
           <Route path="login" element={<LoginForm />} />
           <Route path="register" element={<RegisterForm />} />
+          <Route path="home" element={<HomePage />} />
           <Route path="*" element={<NotFound />} />
         </Route>
         <Route path="reset" element={<ResetPassword />} />

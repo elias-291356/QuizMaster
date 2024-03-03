@@ -8,14 +8,23 @@ import {
   StyledRegisterButton,
   StyledLoginButton,
   StyledAgeCategory,
-  StyledForAdults,
-  StyledForChildren,
-  StyledAuthAndAgeCategory,
+  // StyledForAdults,
+  // StyledForChildren,
+  StyledAgeItem,
+  // StyledAuthAndAgeCategory,
 } from "./NavBlockStyled";
 import { useMediaQuery } from "@react-hook/media-query";
 
+import { useNavigate } from "react-router-dom";
 const NavBlock = () => {
   const isMobile = useMediaQuery("(min-width: 768px)");
+  const navigate = useNavigate();
+  const handleClickRegister = () => {
+    navigate("/register");
+  };
+  const handleClickLogin = () => {
+    navigate("/login");
+  };
   return (
     <>
       <StyledHeader>
@@ -24,12 +33,16 @@ const NavBlock = () => {
           <>
             {/* <StyledAuthAndAgeCategory> */}
             <StyledAgeCategory>
-              <StyledForAdults>For Adults</StyledForAdults>
-              <StyledForChildren>For Children</StyledForChildren>
+              <StyledAgeItem>For Adults</StyledAgeItem>
+              <StyledAgeItem>For Children</StyledAgeItem>
             </StyledAgeCategory>
             <StyledRegisterAndLoginWrap>
-              <StyledRegisterButton>Register</StyledRegisterButton>
-              <StyledLoginButton>Login</StyledLoginButton>
+              <StyledRegisterButton onClick={handleClickRegister}>
+                Register
+              </StyledRegisterButton>
+              <StyledLoginButton onClick={handleClickLogin}>
+                Login
+              </StyledLoginButton>
             </StyledRegisterAndLoginWrap>
             {/* </StyledAuthAndAgeCategory> */}
           </>
