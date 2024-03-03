@@ -6,9 +6,12 @@ import { Outlet } from "react-router-dom";
 
 const Layout = () => {
   return (
-    // <StyledLoginWrap>
-    <Outlet />
-    // </StyledLoginWrap>
+    <>
+      {/* <StyledLoginWrap> */}
+      <Outlet />
+      {/* <MainPage /> */}
+      {/* </StyledLoginWrap> */}
+    </>
   );
 };
 

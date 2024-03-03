@@ -3,5 +3,9 @@
 // export const selectIsSubmit = (state: RootState): boolean =>
 //   state.user.isSubmit;
 
-export const selectIsLoggedIn = (state) => state.user.isLoggedIn;
+export const selectIsLogin = (state) => state.user.isLogin;
 export const selectName = (state) => state.user.username;
+export const selectError = (state) => state.user.error;
+export const selectToken = (state) => state.user.token;
+export const selectAccessToken = (state) => state.user.accessToken;
+export const selectRefreshToken = (state) => state.user.refreshToken;
