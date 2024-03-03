@@ -4,5 +4,12 @@
       <path d="M13.5 4.5L4.5 13.5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
       <path d="M4.5 4.5L13.5 13.5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
     </symbol>
+
+    <symbol id="icon-burger" viewBox="0 0 32 32">
+<path fill="none"  stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2" d="M28 13.333h-24"></path>
+<path fill="none"  stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2" d="M28 8h-24"></path>
+<path fill="none"  stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2" d="M28 18.667h-24"></path>
+<path fill="none"  stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2" d="M28 24h-24"></path>
+</symbol>
   </defs>
 </svg>

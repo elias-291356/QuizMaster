@@ -1,11 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 // import ResetPassword from "./ResetPassword";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { loginThunk } from "../../redux/thunk";
-import { selectIsLoggedIn, selectName } from "../../redux/selectors";
+import { selectAccessToken } from "../../redux/selectors";
 import { toast } from "react-toastify";
+
 import { BASE_URL } from "../../service/api";
 import sprite from "../../images/sprite.svg";
 import {
@@ -25,9 +26,12 @@ import {
   StyledLoginWrap,
 } from "./LoginFormStyled";
 import AuthNavRegister from "../AuthNav/AuthNavRegister";
+import MainPage from "../../pages/MainPage/MainPage";
+import { useEffect } from "react";
 const LoginForm = () => {
   const dispatch = useDispatch();
-  const isLoggedIn = useSelector(selectIsLoggedIn);
+
+  const accessToken = useSelector(selectAccessToken);
 
   const {
     register,
@@ -39,9 +43,9 @@ const LoginForm = () => {
     dispatch(loginThunk(data));
   };
   // console.log(errors);
-  if (isLoggedIn) {
-    toast.success(`logged`);
-    return <h1>logining...</h1>;
+
+  if (accessToken) {
+    return <Navigate to="/" />;
   }
 
   return (
