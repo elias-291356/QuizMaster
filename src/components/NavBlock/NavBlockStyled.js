@@ -43,16 +43,17 @@ export const StyledRegisterAndLoginWrap = styled.ul`
   color: var(--white);
   column-gap: 16px;
 `;
-export const StyledRegisterButton = styled.li`
+export const StyledRegisterButton = styled.button`
   display: grid;
   place-items: center;
   border: 1px solid var(--auth-border);
   border-radius: 30px;
-
   width: 124px;
   height: 48px;
+  background-color: transparent;
+  color: var(--white);
 `;
-export const StyledLoginButton = styled.li`
+export const StyledLoginButton = styled.button`
   display: grid;
   place-items: center;
   font-weight: 700;
@@ -62,6 +63,8 @@ export const StyledLoginButton = styled.li`
   text-decoration: underline;
   text-decoration-skip-ink: none;
   color: var(--auth-button);
+  background-color: transparent;
+  border: none;
 `;
 export const StyledAgeCategory = styled.ul`
   display: grid;
@@ -70,9 +73,14 @@ export const StyledAgeCategory = styled.ul`
   column-gap: 20px;
   color: var(--white);
 `;
-export const StyledForAdults = styled.li``;
+export const StyledAgeItem = styled.li`
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  color: var(--white);
+`;
 
-export const StyledForChildren = styled.li``;
 export const StyledAuthAndAgeCategory = styled.div`
   display: grid;
   grid-template-columns: auto auto;
