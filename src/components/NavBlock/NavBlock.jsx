@@ -14,19 +14,24 @@ import {
   // StyledAuthAndAgeCategory,
 } from "./NavBlockStyled";
 import { useMediaQuery } from "@react-hook/media-query";
-import { Navigate } from "react-router-dom";
 
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import HeroAdult from "../HeroAdult/HeroAdult";
 import HeroChildren from "../HeroChildren/HeroChildren";
-import { useEffect } from "react";
+import Hero from "../Hero/Hero";
+import Burger from "../Burger/Burger";
+import { StyledBurger } from "../Burger/BurgerStyled";
+
 const NavBlock = () => {
   const isMobile = useMediaQuery("(min-width: 768px)");
+  const isBurger = useMediaQuery("(max-width: 768px)");
   const navigate = useNavigate();
+
+  const [showHero, setShowHero] = useState(false);
   const [showHeroAdult, setShowHeroAdult] = useState(false);
   const [showHeroChildren, setShowHeroChildren] = useState(false);
-
+  const [showBurgerMenu, setShowBurgerMenu] = useState(false);
   const handleClickRegister = () => {
     navigate("/register");
   };
@@ -36,18 +41,30 @@ const NavBlock = () => {
 
   const handleClickChildren = () => {
     setShowHeroChildren(true);
-    setShowHeroAdult(false); // Убедитесь, что состояние showHeroAdult сбрасывается при клике на детский элемент
+    setShowHeroAdult(false);
   };
 
   const handleClickAdult = () => {
     setShowHeroAdult(true);
-    setShowHeroChildren(false); // Убедитесь, что состояние showHeroChildren сбрасывается при клике на элемент для взрослых
+    setShowHeroChildren(false);
+  };
+
+  const handleClickToLogo = () => {
+    setShowHero(true);
+    setShowHeroChildren(false);
+    setShowHeroAdult(false);
+  };
+  const handleClickOnBurger = () => {
+    setShowBurgerMenu(true);
+  };
+  const handleCloseBurgerMenu = () => {
+    setShowBurgerMenu(false);
   };
 
   return (
     <>
       <StyledHeader>
-        <StyledTitle>QuizMaster</StyledTitle>
+        <StyledTitle onClick={handleClickToLogo}>QuizMaster</StyledTitle>
         {isMobile && (
           <>
             {/* <StyledAuthAndAgeCategory> */}
@@ -71,16 +88,28 @@ const NavBlock = () => {
           </>
         )}
         {!isMobile && (
-          <StyledSvgBurger>
+          <StyledSvgBurger onClick={handleClickOnBurger}>
             <use href={`${sprite}#icon-burger`}></use>
           </StyledSvgBurger>
         )}
       </StyledHeader>
+      {isBurger && showBurgerMenu && (
+        <StyledBurger>
+          <Burger
+            onClose={handleCloseBurgerMenu}
+            toRegister={handleClickRegister}
+            toLogin={handleClickLogin}
+          />
+        </StyledBurger>
+      )}
+
       {showHeroChildren ? (
         <HeroChildren />
       ) : showHeroAdult ? (
         <HeroAdult />
-      ) : null}
+      ) : (
+        <Hero />
+      )}
     </>
   );
 };

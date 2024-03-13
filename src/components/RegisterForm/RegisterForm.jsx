@@ -21,9 +21,14 @@ import {
   StyledTitleRegister,
   StyledRegisterWrap,
 } from "./RegisterFormStyled";
+import { useNavigate } from "react-router-dom";
 
 const RegisterForm = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const handleCloseModalLoginOrRegister = () => {
+    navigate("/");
+  };
 
   const {
     register,
@@ -42,7 +47,7 @@ const RegisterForm = () => {
           <StyledRegisterAndIconClosWrap>
             <StyledTitleRegister>Sign Up</StyledTitleRegister>
 
-            <StyledSvgCloseIcon>
+            <StyledSvgCloseIcon onClick={handleCloseModalLoginOrRegister}>
               <use href={`${sprite}#icon-close`}></use>
             </StyledSvgCloseIcon>
           </StyledRegisterAndIconClosWrap>

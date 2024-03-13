@@ -1,18 +1,23 @@
 import React from "react";
+import { StyledHeader } from "../NavBlock/NavBlockStyled";
 import { StyledHeroContainer } from "./HeroChildrenStyled";
 
 const HeroChildren = () => {
   return (
     <>
-      <StyledHeroContainer>
-        <h1>For Children</h1>
-        <p>
-          Horem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-          vulputate libero et velit interdum, ac aliquet odio mattis. Class
-          aptent taciti sociosqu ad litora torquent per conubia nostra, per
-          inceptos himenaeos.
-        </p>
-      </StyledHeroContainer>
+      <StyledHeader>
+        <StyledHeroContainer>
+          <h1>For Children</h1>
+          <p>
+            Facere aperiam facilis consequatur molestiae suscipit fuga, iste
+            dolor itaque ipsa atque ad placeat magnam ullam magni fugit
+            perspiciatis beatae, quos exercitationem corporis officia! Quaerat
+            quisquam, fugit reprehenderit incidunt qui, non praesentium adipisci
+            fugiat, eos amet corrupti dicta? Distinctio repudiandae veniam
+            voluptate.
+          </p>
+        </StyledHeroContainer>
+      </StyledHeader>
     </>
   );
 };

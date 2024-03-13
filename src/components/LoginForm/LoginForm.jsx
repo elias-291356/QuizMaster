@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, Navigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 // import ResetPassword from "./ResetPassword";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
@@ -27,9 +27,13 @@ import {
 } from "./LoginFormStyled";
 import AuthNavRegister from "../AuthNav/AuthNavRegister";
 import MainPage from "../../pages/MainPage/MainPage";
-import { useEffect } from "react";
+
 const LoginForm = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const handleCloseModalLoginOrRegister = () => {
+    navigate("/");
+  };
 
   const accessToken = useSelector(selectAccessToken);
 
@@ -55,7 +59,7 @@ const LoginForm = () => {
           <StyledLoginAndIconClosWrap>
             <StyledTitleLogin>Login</StyledTitleLogin>
 
-            <StyledSvgCloseIcon>
+            <StyledSvgCloseIcon onClick={handleCloseModalLoginOrRegister}>
               <use href={`${sprite}#icon-close`}></use>
             </StyledSvgCloseIcon>
           </StyledLoginAndIconClosWrap>

@@ -1,18 +1,22 @@
 import React from "react";
+import { StyledHeader } from "../NavBlock/NavBlockStyled";
 import { StyledHeroContainer } from "./HeroAdultStyled";
 
 const HeroAdult = () => {
   return (
     <>
-      <StyledHeroContainer>
-        <h1>For Adults</h1>
-        <p>
-          Horem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-          vulputate libero et velit interdum, ac aliquet odio mattis. Class
-          aptent taciti sociosqu ad litora torquent per conubia nostra, per
-          inceptos himenaeos.
-        </p>
-      </StyledHeroContainer>
+      <StyledHeader>
+        <StyledHeroContainer>
+          <h1>For Adults</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum
+            autem odio exercitationem aut mollitia. Quisquam excepturi quod
+            voluptates consequuntur ad ratione minima accusantium, ipsam
+            reiciendis, id, quae doloribus quas consectetur. Lorem ipsum dolor,
+            sit amet consectetur adipisicing elit.
+          </p>
+        </StyledHeroContainer>
+      </StyledHeader>
     </>
   );
 };
