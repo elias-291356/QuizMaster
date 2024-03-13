@@ -6,7 +6,7 @@ import NavBlock from "../../components/NavBlock/NavBlock";
 import Quizes from "../../components/Quizes/Quizes";
 import Reviews from "../../components/Reviews/Reviews";
 import Stats from "../../components/Stats/Stats";
-import { StyledGridContainer } from "./MaigPageStyled";
+import { StyledGridContainer } from "./MainPageStyled";
 
 const MainPage = () => {
   return (

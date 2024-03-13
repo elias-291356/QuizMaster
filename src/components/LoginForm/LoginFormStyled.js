@@ -104,6 +104,7 @@ export const StyledSvgCloseIcon = styled.svg`
   stroke: #f4f4f4;
   width: 18px;
   height: 18px;
+  cursor: pointer;
 `;
 export const StyledLoginAndIconClosWrap = styled.div`
   display: inline-grid;

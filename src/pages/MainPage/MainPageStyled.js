@@ -27,12 +27,13 @@ export const StyledGridContainer = styled.div`
     max-width: 768px;
     background-image: url(src/images/overlay_tablet.png),
       url(src/images/background_tablet.png);
-    grid-auto-rows: 396px;
+    grid-template-rows: 396px;
   }
 
   @media screen and (min-width: 1440px) {
     min-width: 1440px;
     background-image: url(src/images/overlay_desktop.png),
       url(src/images/background_desktop.png);
+    grid-template-rows: 142px;
   }
 `;
