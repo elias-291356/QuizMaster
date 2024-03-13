@@ -1,25 +1,34 @@
 import styled from "styled-components";
 
 export const StyledHeroWrap = styled.div`
-  display: grid;
-
-  grid-row-gap: 32px;
+  /* display: grid; */
+  display: flex;
+  flex-direction: column;
+  row-gap: 32px;
   width: 335px;
   font-weight: 400;
   font-size: 14px;
   line-height: 1.28571;
   letter-spacing: -0.01em;
   color: var(--white);
+  @media screen and (min-width: 375px) {
+  }
+
+  @media screen and (min-width: 768px) {
+    /* max-width: 768px; */
+    width: 397px;
+  }
+
+  @media screen and (min-width: 1440px) {
+  }
 `;
 export const StyledHeroContent = styled.div`
   display: grid;
-
   grid-row-gap: 16px;
 `;
 export const StyledHeroButtons = styled.div`
-  display: grid;
-  grid-template-columns: auto auto;
-  grid-gap: 14px;
+  display: flex;
+  column-gap: 14px;
 `;
 export const StyledHeroBtnChoose = styled.button`
   border-radius: 30px;
@@ -57,7 +66,7 @@ export const StyledTitleHero = styled.h1`
   color: var(--white);
 
   @media screen and (min-width: 375px) {
-    width: 335px;
+    width: 341px;
   }
   @media screen and (min-width: 768px) {
     width: 704px;
@@ -66,5 +75,6 @@ export const StyledTitleHero = styled.h1`
   @media screen and (min-width: 1440px) {
     width: 1240px;
     font-size: 120px;
+    width: 928px;
   }
 `;

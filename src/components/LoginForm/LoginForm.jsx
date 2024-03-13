@@ -27,6 +27,8 @@ import {
 } from "./LoginFormStyled";
 import AuthNavRegister from "../AuthNav/AuthNavRegister";
 import MainPage from "../../pages/MainPage/MainPage";
+import { StyledGridContainer } from "../../pages/MainPage/MainPageStyled";
+import NavBlock from "../NavBlock/NavBlock";
 
 const LoginForm = () => {
   const dispatch = useDispatch();

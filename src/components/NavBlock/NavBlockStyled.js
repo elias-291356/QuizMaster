@@ -35,6 +35,7 @@ export const StyledTitle = styled.h1`
   line-height: 1;
   letter-spacing: -0.01em;
   color: var(--white);
+  cursor: pointer;
 `;
 export const StyledRegisterAndLoginWrap = styled.ul`
   display: grid;
@@ -72,6 +73,7 @@ export const StyledAgeCategory = styled.ul`
   place-items: center;
   column-gap: 20px;
   color: var(--white);
+  cursor: pointer;
 `;
 export const StyledAgeItem = styled.li`
   font-weight: 400;
