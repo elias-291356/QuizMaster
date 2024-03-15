@@ -39,7 +39,7 @@ export const StyledHeroBtnChoose = styled.button`
   border: none;
 
   font-weight: 700;
-  font-size: 14px;
+  font-size: 13px;
   line-height: 1.14286;
   letter-spacing: -0.01em;
   color: #f4f4f4;
@@ -53,7 +53,7 @@ export const StyledHeroBtnCreate = styled.button`
   background-color: transparent;
 
   font-weight: 700;
-  font-size: 14px;
+  font-size: 13px;
   line-height: 1.14286;
   letter-spacing: -0.01em;
   color: var(--white);

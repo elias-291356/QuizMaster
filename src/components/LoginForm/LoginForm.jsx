@@ -29,6 +29,7 @@ import AuthNavRegister from "../AuthNav/AuthNavRegister";
 import MainPage from "../../pages/MainPage/MainPage";
 import { StyledGridContainer } from "../../pages/MainPage/MainPageStyled";
 import NavBlock from "../NavBlock/NavBlock";
+import { StyledBackdrop } from "../RegisterForm/RegisterFormStyled";
 
 const LoginForm = () => {
   const dispatch = useDispatch();
@@ -56,7 +57,10 @@ const LoginForm = () => {
 
   return (
     <>
-      <StyledLoginWrap>
+      <StyledGridContainer>
+        <NavBlock />
+      </StyledGridContainer>
+      <StyledBackdrop>
         <StyledFormTopWrap>
           <StyledLoginAndIconClosWrap>
             <StyledTitleLogin>Login</StyledTitleLogin>
@@ -93,7 +97,7 @@ const LoginForm = () => {
             </StyledLinkRestorePassword>
           </StyledRestoreAndGoogleAndRegisterWrap>
         </StyledFormTopWrap>
-      </StyledLoginWrap>
+      </StyledBackdrop>
     </>
   );
 };

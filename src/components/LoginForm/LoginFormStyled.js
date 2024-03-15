@@ -71,13 +71,28 @@ export const StyledInputesWrap = styled.div`
 `;
 export const StyledFormTopWrap = styled.div`
   display: grid;
+  justify-content: center;
+  position: absolute;
+  top: 41%;
+  left: 50%;
+  row-gap: 32px;
+  width: 335px;
+  padding-top: 40px;
+  border-radius: 20px;
+  transform: translate(-50%, -50%);
 
   border: 1px solid var(--border);
-  border-radius: 20px;
-  row-gap: 32px;
-  padding-top: 40px;
-  width: 335px;
-  justify-content: center;
+  background-color: var(--background);
+
+  @media screen and (min-width: 768px) {
+    top: 45%;
+    width: 474px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  @media screen and (min-width: 1440px) {
+    top: 37%;
+  }
 `;
 
 export const StyledFormBottomWrap = styled.div`
