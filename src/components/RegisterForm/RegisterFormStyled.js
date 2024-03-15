@@ -35,8 +35,13 @@ export const StyledRegisterRouteWrap = styled.div`
   padding-top: 16px;
   padding-bottom: 40px;
 `;
-export const StyledRegisterWrap = styled.div`
-  display: grid;
-  justify-items: center;
-  background-color: var(--background);
+export const StyledBackdrop = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(23, 23, 23, 0.6);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 `;

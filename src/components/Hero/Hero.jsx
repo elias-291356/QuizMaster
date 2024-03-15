@@ -23,7 +23,7 @@ const Hero = () => {
         </StyledHeroContent>
         <StyledHeroButtons>
           <StyledHeroBtnChoose>Choose a test</StyledHeroBtnChoose>
-          <StyledHeroBtnCreate>Create a test</StyledHeroBtnCreate>
+          <StyledHeroBtnCreate>Create a quest</StyledHeroBtnCreate>
         </StyledHeroButtons>
         <StyledTitleHero>Are you ready to take the Quiz? </StyledTitleHero>
       </StyledHeroWrap>

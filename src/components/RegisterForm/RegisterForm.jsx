@@ -19,9 +19,11 @@ import {
   StyledRegisterForm,
   StyledRegisterRouteWrap,
   StyledTitleRegister,
-  StyledRegisterWrap,
+  StyledBackdrop,
 } from "./RegisterFormStyled";
 import { useNavigate } from "react-router-dom";
+import { StyledGridContainer } from "../../pages/MainPage/MainPageStyled";
+import NavBlock from "../NavBlock/NavBlock";
 
 const RegisterForm = () => {
   const dispatch = useDispatch();
@@ -42,7 +44,10 @@ const RegisterForm = () => {
   console.log(errors);
   return (
     <>
-      <StyledRegisterWrap>
+      <StyledGridContainer>
+        <NavBlock />
+      </StyledGridContainer>
+      <StyledBackdrop>
         <StyledFormTopWrap>
           <StyledRegisterAndIconClosWrap>
             <StyledTitleRegister>Sign Up</StyledTitleRegister>
@@ -77,7 +82,7 @@ const RegisterForm = () => {
             </StyledRegisterRouteWrap>
           </StyledRegisterForm>
         </StyledFormTopWrap>
-      </StyledRegisterWrap>
+      </StyledBackdrop>
     </>
   );
 };
