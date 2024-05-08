@@ -28,6 +28,7 @@ import NavBlock from "../NavBlock/NavBlock";
 const RegisterForm = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
   const handleCloseModalLoginOrRegister = () => {
     navigate("/");
   };

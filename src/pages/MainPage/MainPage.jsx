@@ -19,6 +19,9 @@ const MainPage = () => {
         {/* <Quizes /> */}
         {/* <Reviews /> */}
         {/* <Stats /> */}
+        {/* <Weekend> */}
+        {/* <Injury> */}
+        {/* <Abandon> */}
       </StyledGridContainer>
     </>
   );

@@ -9,3 +9,4 @@ export const selectError = (state) => state.user.error;
 export const selectToken = (state) => state.user.token;
 export const selectAccessToken = (state) => state.user.accessToken;
 export const selectRefreshToken = (state) => state.user.refreshToken;
+export const selectIsOpen = (state) => state.user.isOpen;

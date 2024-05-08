@@ -12,7 +12,7 @@ export const StyledInputEmailWrap = styled.input`
   color: var(--white);
   border-radius: 30px;
   padding-left: 20px;
-  width: 295px;
+  /* width: 295px; */
   height: 44px;
 `;
 export const StyledInputPasswordnWrap = styled.input`
@@ -21,7 +21,7 @@ export const StyledInputPasswordnWrap = styled.input`
   color: var(--white);
   border-radius: 30px;
   padding-left: 20px;
-  width: 295px;
+  /* width: 295px; */
   height: 44px;
 `;
 export const StyledInputNameWrap = styled.input`
@@ -30,14 +30,14 @@ export const StyledInputNameWrap = styled.input`
   color: var(--white);
   border-radius: 30px;
   padding-left: 20px;
-  width: 295px;
+  /* width: 295px; */
   height: 44px;
 `;
 export const StyledAuthButton = styled.button`
   border: none;
   border-radius: 30px;
   padding: 16px 128px;
-  width: 295px;
+  /* width: 295px; */
   height: 48px;
   background-color: var(--blue);
   color: var(--white);
@@ -64,6 +64,9 @@ export const StyledLoginForm = styled.form`
   display: grid;
   justify-items: center;
   grid-template-columns: 295px;
+  @media screen and (min-width: 768px) {
+    grid-template-columns: 314px;
+  }
 `;
 export const StyledInputesWrap = styled.div`
   display: grid;
@@ -74,7 +77,7 @@ export const StyledFormTopWrap = styled.div`
   justify-content: center;
   position: absolute;
   top: 41%;
-  left: 50%;
+  left: 49%;
   row-gap: 32px;
   width: 335px;
   padding-top: 40px;
@@ -100,6 +103,9 @@ export const StyledFormBottomWrap = styled.div`
   grid-template-columns: 295px;
 
   row-gap: 32px;
+  @media screen and (min-width: 768px) {
+    grid-template-columns: 314px;
+  }
 `;
 export const StyledTitleLogin = styled.div`
   color: var(--white);
@@ -116,6 +122,9 @@ export const StyledRestoreAndGoogleAndRegisterWrap = styled.div`
   padding-bottom: 40px;
 `;
 export const StyledSvgCloseIcon = styled.svg`
+  position: absolute;
+  right: 30px;
+  top: 30px;
   stroke: #f4f4f4;
   width: 18px;
   height: 18px;

@@ -22,16 +22,17 @@ import HeroChildren from "../HeroChildren/HeroChildren";
 import Hero from "../Hero/Hero";
 import Burger from "../Burger/Burger";
 import { StyledBurger } from "../Burger/BurgerStyled";
+import { useEffect } from "react";
 
 const NavBlock = () => {
   const isMobile = useMediaQuery("(min-width: 768px)");
   const isBurger = useMediaQuery("(max-width: 768px)");
   const navigate = useNavigate();
-
   const [showHero, setShowHero] = useState(false);
   const [showHeroAdult, setShowHeroAdult] = useState(false);
   const [showHeroChildren, setShowHeroChildren] = useState(false);
   const [showBurgerMenu, setShowBurgerMenu] = useState(false);
+
   const handleClickRegister = () => {
     navigate("/register");
   };
@@ -110,6 +111,8 @@ const NavBlock = () => {
       ) : (
         <Hero />
       )}
+      {/* <Voice> */}
+      {/* <Enlist> */}
     </>
   );
 };

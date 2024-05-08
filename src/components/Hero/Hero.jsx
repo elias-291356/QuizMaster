@@ -15,7 +15,7 @@ const Hero = () => {
         <StyledHeroContent>
           <p>Hello visitor! </p>
           <p>
-            On the site you will find quizzes and quizzes with various types of
+            On the site you wigll find quizzes and quizzes with various types of
             questions: cinema, music, logic and others. Quizzes differ in the
             degreeof difficulty of questions, the number and type of questions.
             Choose a test Create a quest
