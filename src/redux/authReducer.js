@@ -11,6 +11,7 @@ const initialState = {
   error: null,
   accessToken: null,
   refreshToken: null,
+  isOpen: false,
 };
 
 const userSlice = createSlice({
@@ -20,6 +21,10 @@ const userSlice = createSlice({
   reducers: {
     setSubmit: (state, action) => {
       // state.isSubmit = action.payload;
+    },
+    setIsOpen: (state, action) => {
+      state.isOpen = action.payload;
+      console.log(action.payload);
     },
   },
   extraReducers: (builder) => {
@@ -93,5 +98,5 @@ const userSlice = createSlice({
   },
 });
 
-// export const { setSubmit } = userSlice.actions;
+export const { setIsOpen } = userSlice.actions;
 export const authReducer = userSlice.reducer;
